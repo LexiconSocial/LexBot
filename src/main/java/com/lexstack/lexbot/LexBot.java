@@ -22,16 +22,14 @@ public class LexBot {
         new SpringApplicationBuilder(LexBot.class)
                 .build()
                 .run(args);
-        //SpringApplication.run(LexBot.class, args);
     }
 
     @Bean
     public GatewayDiscordClient gatewayDiscordClient() {
-        return DiscordClientBuilder.create("MTA0MjU4MjgzOTM4MTczNzYxNA.G-8luo.MxuaOuiOZ5Pwmkydm4JOeVC-4njdWJt-eAs9QY")
+        return DiscordClientBuilder.create(apiKey)
                 .build()
                 .gateway()
                 .setInitialPresence(ignore -> ClientPresence.online(ClientActivity.listening("to /commands")))
-                //.setEnabledIntents(IntentSet.all())
                 .login()
                 .block();
     }
