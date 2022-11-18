@@ -19,6 +19,7 @@ public class RedisConfig {
     JedisConnectionFactory jedisConnectionFactory() {
         JedisConnectionFactory jedisConFactory
                 = new JedisConnectionFactory();
+        System.out.println("++++++++++ REDIS HOST NAME : " + redisHostName);
         jedisConFactory.setHostName(redisHostName);
         jedisConFactory.setPort(redisPort);
         return new JedisConnectionFactory();

@@ -25,7 +25,7 @@ public class MessageEventListener {
         // Distribute event to all MessageEventCommands
         return Flux.fromIterable(commands)
                 .next()
-                // TODO Filter messages not sent  by self?
+                // TODO Filter messages not sent  by self.
                 .flatMap(command -> command.handleMessage(messageCreateEvent));
     }
 }
